@@ -30,12 +30,49 @@ body {
     padding-top: 25px;
 }
 
-.product {
+
+
+
+.container {
+    position: relative;
+    
+    margin: 0 auto;
     width: 90%;
     border-radius: 15px;
+}
+
+.product {
+    width: 100%;
+    border-radius: 15px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background-color: hsl(178, 100%, 50%);
+  border-radius: 15px;
+}
+
+.view {
+    position: absolute;
+    top: calc(50% - 24px);
+    left: calc(50% - 22px);
+    display: none;
+}
+
+.container:hover #overlay {
+    opacity: 0.5;
+}
+
+.container:hover #overlay + .view {
+    display: block;
 }
 
 .card h3 {
@@ -43,6 +80,11 @@ body {
     margin-left: 5%;
     font-size: 1.4rem;
     font-weight: 500;
+}
+
+.card h3:hover {
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
 }
 
 .card .desc {
@@ -76,6 +118,10 @@ body {
 .eth img:hover {
     cursor:pointer;
     opacity: 0.5;
+}
+
+#price {
+    color: hsl(178, 100%, 50%);
 }
 
 
@@ -115,4 +161,8 @@ hr {
 .creator a:visited {
     color: white;
     text-decoration: none;
+}
+
+.creator a:hover {
+    color: hsl(178, 100%, 50%);
 }
